@@ -29,8 +29,6 @@ aws cloudformation create-stack --region eu-west-1 --stack-name fruch-test-05 --
     ParameterKey=ScyllaAmi,ParameterValue=ami-0ececa5cacea302a8
 
 ```
-Example of link to start the cloudforamtion:
 
-https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://s3-eu-west-1.amazonaws.com/cf-templates-1jy8um4tbzwit-eu-west-1/2019241R3e-scylla.templateenk889k0zz&stackName=fruch-test&param_ScyllaAmi=ami-0ececa5cacea302a8
    
 
