@@ -22,12 +22,12 @@ aws/ami/build_ami.sh
 [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html)
 ---
 ### EC2 User-Data
-创建EC2时，参数将被传递
+创建EC2时，以下参数将被传递
 
 * **Object Properties**
-    * **scylla_yaml** ([`Scylla YAML`](#scylla_yaml)) – Mapping of all fields that would pass down to scylla.yaml configuration file
+    * **scylla_yaml** ([`Scylla YAML`](#scylla_yaml)) – 映射到 scylla.yaml 配置文件的所有字段 
     * **scylla_startup_args** (*list*) – embedded information about the user that created the issue (NOT YET IMPLEMENTED) (*default=’[]’*)
-    * **developer_mode** ([*boolean*](https://docs.python.org/library/stdtypes.html#boolean-values)) – Enables developer mode (*default=’false’*)
+    * **developer_mode** ([*boolean*](https://docs.python.org/library/stdtypes.html#boolean-values)) – 是否启动开发者模式 (*default=’false’*)
     * **post_configuration_script** ([*string*](https://docs.python.org/library/stdtypes.html#str)) – A script to run once AMI first configuration is finished, can be a string encoded in base64. (*default=’’*)
     * **post_configuration_script_timeout** ([*int*](https://docs.python.org/library/stdtypes.html#int)) – Time in seconds to limit the post_configuration_script (*default=’600’*)
     * **start_scylla_on_first_boot** ([*boolean*](https://docs.python.org/library/stdtypes.html#boolean-values)) – If true, scylla-server would boot at AMI boot (*default=’true’*)
@@ -67,10 +67,10 @@ Spinning a new node connecting to “10.0.219.209” as a seed, and installing c
 
 ## Creating a Scylla cluster using the Machine Image
 ### AWS - CloudFormation
-Use template `aws/cloudformation/scylla.yaml`.
-Currently, maximum 10 nodes cluster is supported.
+使用模版文件 `aws/cloudformation/scylla.yaml`.
+当前模版支持创建最大10个节点的集群.
 
-## Building scylla-machine-image package
+## 构建 scyllaDB 镜像
 
 ### Ubuntu - DEB
 
