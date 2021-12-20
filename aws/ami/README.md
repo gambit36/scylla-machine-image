@@ -13,7 +13,7 @@ Create dist/ami/variables.json with following format, specify AMI variables:
     "secret_key": "xxx",
     "subnet_id": "subnet-xxx",
     "security_group_id": "sg-xxx",
-    "region": "us-east-1",
+    "region": "cn-northwest-1",
     "associate_public_ip_address": "true",
     "instance_type": "c4.xlarge",
     "ami_prefix": "YOUR_NAME-"
