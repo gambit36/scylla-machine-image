@@ -1,12 +1,12 @@
-# Scylla Machine Image
-Provides following
-- Create an image with pre-installed Scylla
-- Allow to configure the database when an instance is launched first time
-- Easy cluster creation
+# ScyllaDB 宁夏区安装指南
+主要由以下步骤组成
+- 创建一个已经预装ScyllaDB的AMI
+- 允许在第一次启动实例时配置数据库 
+- 轻松创建集群 
 
 ## OS Package
-RPM/DEB package that is pre-installed in the image.
-Responsible for configuring Scylla during first boot of the instance.
+在镜像中预装RPM/DEB包。由于CentOS即将终止支持，建议使用Ubuntu安装DEB包。
+在实例第一次启动期间配置 ScyllaDB。 
 
 ## Create an image
 ### AWS
@@ -16,13 +16,13 @@ aws/ami/build_ami.sh
 
 ## Scylla AMI user-data Format v2
 
-Scylla AMI user-data should be passed as a json object, as described below
+我们会使用EC2的 user-data 功能向 ScyllaDB AMI 传递一些参数, 如下面文档描述：
 
-see AWS docs for how to pass user-data into ec2 instances:
+如何向EC2实例传递参数:
 [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html)
 ---
 ### EC2 User-Data
-User Data that can pass when create EC2 instances
+创建EC2时，参数将被传递
 
 * **Object Properties**
     * **scylla_yaml** ([`Scylla YAML`](#scylla_yaml)) – Mapping of all fields that would pass down to scylla.yaml configuration file
